@@ -1,0 +1,21 @@
+/* Klara Makek */
+/* 19.02.2023 */
+/* ISTE240 Exercise 4 – JavaScript Part 1 */
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 38, 85);
+    margin: 2%;
+}
+
+body {
+    text-align: center;
+    background-color: blanchedalmond;
+    width: 30%;
+    margin-left: 30%;
+}
+
+hr {
+    border: 2px dotted black;
+    width: 105%;
+}

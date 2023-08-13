@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Klara Makek -->
+<!-- 04.03.2023 -->
+<!--ISTE 240 Exercise 5 – JavaScript Part 2 -->
+
+<head>
+    <meta charset=utf-8>
+    <title>EX05</title>
+    <script src="EX05.js"></script>
+    <link rel="stylesheet" href="EX05.css">
+
+</head>
+
+<body>
+    <div>
+        <h2>JavaScript Exercise 5a </h2>
+        <!--when clicked it move text for 10px left-->
+        <p id="myText" style="position: relative; left: 0px;">I Move</p>
+        <button onclick="moveText()">Move the Text</button>
+
+    </div>
+    <hr>
+    <div>
+        <h2>JavaScript Exercise 5b </h2>
+        <!--It counts the amount of inputs-->
+        <form id="regForm">
+            <input type="text" id="fname" placeholder="Boo"><br>
+            <input type="text" id="lname" placeholder="Radley"><br>
+            <input type="checkbox" id="dog">I have a dog. (Check if you
+            do)<br>
+            <input type="text" id="major" placeholder="Major"><br>
+            <input type="button" onclick="howmany();" value="Inputs count">
+        </form>
+    </div>
+    <hr>
+    <div id="colorchanger">
+        <h2>JavaScript Exercise 5c</h2>
+        <!--It changes the background of div from selected color-->
+        <form>
+            <select id="color">
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+                <option>Yellow</option>
+                <option>Orange</option>
+                <option>Purple</option>
+            </select>
+            <input type="button" onclick="colorchanger()" value="Color Change">
+        </form>
+    </div>
+    <hr>
+    <div>
+        <div>
+            <h2>JavaScript Exercise 5d </h2>
+        </div>
+        <!--Changes color of sentence form selected color before-->
+        <p id="txtColor" onmouseover="mouseOver()" onmouseout="mouseOut()">This sentence will change color when
+            you hover over it.</p>
+
+    </div>
+    <hr>
+    <div>
+        <div>
+            <h2>JavaScript Exercise 5e </h2>
+            <!--Inputs text node-->
+            <p id="normalTxt">Normal txt</p>
+            <button onclick="changeText()">Txt node</button>
+        </div>
+    </div>
+</body>
+
+</html>

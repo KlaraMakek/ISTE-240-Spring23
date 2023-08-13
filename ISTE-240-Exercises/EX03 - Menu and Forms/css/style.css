@@ -1,0 +1,64 @@
+body {
+    background-image: url(../assets/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+/*heder*/
+header {
+    background-color: rgba(0, 0, 0, 0.845);
+    padding: 1%;
+    width: 600px;
+    height: 50px;
+
+    float: right;
+    margin-right: 28%;
+}
+
+nav {
+    margin-top: 5%;
+
+    float: right;
+}
+
+/*links*/
+a {
+    text-decoration: none;
+    color: red;
+}
+
+.logo {
+    margin-left: 25px;
+    width: 50px;
+    float: left;
+}
+
+/*main*/
+.main {
+    background-color: rgba(0, 0, 0, 0.845);
+    padding: 4.6%;
+    width: 500px;
+    height: 500px;
+    float: right;
+    margin-right: 28%;
+}
+
+/*other*/
+.h1 {
+    font-size: 28px;
+}
+
+.h2 {
+    color: red;
+    font-size: 20px;
+}
+
+.line {
+    border: 1px dashed yellow;
+}
+
+p {
+    color: red;
+}

@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*name of teh flower*/
+.text {
+    color: rgb(234, 119, 234);
+    font-size: 24px;
+    padding-top: 30%;
+    float: left;
+}
+
+/*the star*/
+.star {
+    z-index: -1;
+    float: left;
+    font-size: 100px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: yellowgreen;
+    text-shadow: 5px 5px yellow;
+    padding: 5%;
+}
+
+/*the "box" for the items*/
+.flower {
+    z-index: -2;
+    background-color: rgb(45, 98, 13);
+    border-radius: 20px;
+    width: 170px;
+    height: 150px;
+    padding: 2%;
+    margin: 20%;
+    /*to make the fade when cover*/
+    transition: 0.3s;
+}
+
+/* when hover it changes color and cursor is a hand*/
+.flower:hover {
+    background-color: rgb(199, 57, 199);
+    cursor: pointer;
+
+}
+
+/*Side bar with designated bg picture*/
+.side-bar {
+    grid-area: side-bar;
+    background-image: url("../assets/side.jpg");
+    background-repeat: repeat-y;
+    height: 100%;
+}
+
+.first-box {
+    grid-area: first-box;
+}
+
+.second-box {
+    grid-area: second-box;
+}
+
+/*Media query for "big" screen*/
+@media screen and (min-width: 651px) {
+    .container {
+        display: grid;
+        grid-template-columns: 150px 200px 200px;
+        gap: 4%;
+        grid-template-areas:
+            "side-bar first-box second-box"
+            "side-bar first-box second-box";
+    }
+}
+
+/*Media query for "middle" screen*/
+@media screen and (min-width: 450px) and (max-width: 650px) {
+    .container {
+        display: grid;
+        grid-template-columns: 100px 200px;
+        grid-template-areas:
+            "side-bar first-box"
+            "side-bar second-box";
+    }
+
+}
+
+/*Media query for "small" screen*/
+@media screen and (max-width: 450px) {
+    .container {
+        display: grid;
+        grid-template-columns: 200px;
+        grid-template-rows: 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "first-box"
+            "second-box";
+    }
+}

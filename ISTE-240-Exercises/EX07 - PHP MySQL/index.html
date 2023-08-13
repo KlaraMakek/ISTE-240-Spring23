@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Simple database form
+    @author Klara Makek
+    @version 2023, 3
+    ISTE 240 EX07
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Klara Makek - EX07</title>
+</head>
+
+<body>
+    <h1>Comments</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Comments</td>
+            <td>Date</td>
+        </tr>
+            <?php
+            $host = "localhost";
+            $username = "km9654";
+            $password = "12345678";
+            $dbname = "txtCom";
+
+            $conn = mysqli_connect($host, $username, $password, $dbname);
+
+            if(!$conn){
+                die("Connection failed: ". mysqli_connect_error());
+            }
+            $sql = "SELECT * FROM comments";
+            $result = mysqli_query($conn, $sql);
+            
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr>";
+                    echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["comments"] . "</td>";
+                                echo "<td>" . $row["date"] . "</td>";
+                                    echo "</tr>";
+            }
+            mysqli_close($conn);
+            ?>
+            
+    </table>
+
+    <h1>Comment back</h1>
+    <form method="POST" action="comDB.php">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id"><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="comment ">Comment :</label>
+        <input type="text " id="comments" name="comments"><br>
+
+        <label for="date">Last modified date:</label>
+        <input type="date" id="date" name="date"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

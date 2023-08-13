@@ -1,0 +1,21 @@
+
+/* Klara Makek */
+/* 19.02.2023 */
+/* ISTE240 Exercise 4 – JavaScript Part 1 */
+
+*{
+    margin: 1%;
+    background-color: blanchedalmond;
+    color: rgb(0, 38, 85);
+    
+}
+body{
+    width: 40%;
+    margin-left: 30%;
+    text-align: center;
+    
+}
+hr{
+    border: 2px dotted black;
+    width: 105%;
+}
