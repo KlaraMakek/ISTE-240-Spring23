@@ -1,0 +1,640 @@
+/*
+ Individual Project 1
+@author Klara Makek
+@version 2023
+ISTE 140
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    color: #344f68;
+    font-size: 17px;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto';
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 0.6fr 1.5fr 0.6fr;
+    grid-template-rows: 1.8fr auto auto;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        ". content ."
+        "footer footer footer";
+}
+
+.content {
+    grid-area: content;
+    padding: 3%;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1.4fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "nav nav nav"
+        ". . ."
+        "name-site . ."
+        ". . .";
+    grid-area: header;
+}
+
+/*-------------NAVIGATION-------------*/
+nav {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . ."
+        "logo links links"
+        ". . .";
+    grid-area: nav;
+    height: 80px;
+    background: rgb(7, 28, 49);
+    background: radial-gradient(circle, rgba(7, 28, 49, 0.9080882352941176) 43%, rgba(52, 79, 104, 1) 100%);
+}
+
+.nlogo {
+    height: 70px;
+    margin-left: 100%;
+}
+
+.nlogo-ind {
+    height: 70px;
+    margin-left: 100%;
+    visibility: hidden;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+
+
+/*----------------NAVIGATION LINKS----------------*/
+
+.links {
+    grid-area: links;
+    overflow: hidden;
+    color: wheat;
+    overflow: hidden;
+}
+
+.links a {
+    float: right;
+    font-size: 17px;
+    color: #93C47D;
+    text-align: center;
+    padding: 2%;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: whitesmoke;
+}
+
+/*--index nav bar--*/
+.links-ind {
+    overflow: hidden;
+}
+
+.links-ind a {
+    float: right;
+    font-size: 17px;
+    color: #93C47D;
+    text-align: center;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.links-ind a:hover {
+    color: whitesmoke;
+}
+
+/*--index nav bar- END --*/
+.dropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .button {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: #93C47D;
+    padding: 23px 10px;
+    font-family: inherit;
+    margin: 0;
+    background-color: transparent;
+}
+
+.navbar a:hover,
+.dropdown:hover .button {
+    color: white;
+}
+
+.downLink {
+    color: #93C47D;
+    display: none;
+    position: absolute;
+    background-color: #b4c3d1b9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.downLink a {
+    float: none;
+    color: #1a334b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.downLink a:hover {
+    background-color: #344f68;
+}
+
+.dropdown:hover .downLink {
+    display: block;
+}
+
+/*----------------RESPONSIVE MENU----------------*/
+#dropdown-btn {
+    background-color: #b4c3d1b9;
+    color: #1a334b;
+    font-size: 14px;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #dropdown-menu {
+    display: none;
+  }
+  
+  #dropdown-menu a {
+    display: block;
+    padding: 12px;
+  }
+  
+  #dropdown-menu .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #dropdown-menu .downLink {
+    position: absolute;
+    display: none;
+    z-index: 1;
+  }
+  
+  #dropdown-menu .downLink a {
+    display: block;
+    background-color: #f1f1f1;
+    color: black;
+    padding: 12px;
+  }
+  
+  #dropdown-menu .downLink a:hover {
+    background-color: #ddd;
+  }
+  
+  #dropdown-menu .dropdown:hover .downLink {
+    display: block;
+  }
+  
+/*----------------NAME OF THE SITE----------------*/
+.name-site {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    box-shadow: 15px 15px 0px #152b4079;
+    background-color: #0a2743af;
+    color: #ededed;
+    padding: 14%;
+    text-align: center;
+    grid-area: name-site;
+}
+
+/*----------------NAME OF THE SITE - INDEX----------------*/
+.name-site-ind {
+    position: relative;
+    width: 560px;
+    height: auto;
+    font-size: 24px;
+    box-shadow: 15px 15px 0px #152b4079;
+    background-color: #0a2743af;
+    color: #ededed;
+    padding: 14%;
+    text-align: center;
+    grid-area: name-site;
+}
+
+/*-----------------CONTENT--------------*/
+
+#about-cont,
+#history-cont,
+#pond-cont,
+#dubovica-cont,
+#fol-cont,
+#humac-cont,
+#pok-cont,
+#jels-cont,
+#vrb-cont,
+#gra-cont,
+#map-cont {
+    text-align: justify;
+}
+
+#ref,
+#gra {
+    height: 100px;
+}
+
+#about,
+#history,
+#pond,
+#dubovica,
+#fol,
+#humac,
+#pok,
+#jels,
+#vrb,
+#map {
+    background-color: aqua;
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+/*--------------INDEX--------------*/
+.qoute {
+    color: #7ea4c7;
+    font-size: 16px;
+}
+
+/*----------VIDEO INDEX-------*/
+#ind {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+/*------------BUTTON - INDEX---------------*/
+.call-action {
+    font-size: 17px;
+    background-color: #93C47D;
+    color: #061320;
+    border-radius: 5px;
+    border: 2px solid #1a334b;
+    padding: 15px;
+}
+
+.call-action:hover {
+    background-color: #1a334b;
+    color: white;
+}
+
+
+
+
+/*--------------ABOUT--------------*/
+#about {
+    background-image: url(../assets/img/history-bg.jpg);
+}
+
+/*--------------HISTORY--------------*/
+#history {
+    background-image: url(../assets/img/history-bg.jpg);
+}
+
+/*--------------PETAR'S POND--------------*/
+#pond {
+    background-image: url(../assets/img/pet-bg.jpg);
+}
+
+
+/*--------------DUBOVICA--------------*/
+#dubovica {
+    background-image: url(../assets/img/dub-bg.jpg);
+}
+
+
+/*--------------Fortica--------------*/
+#fol {
+    background-image: url(../assets/img/fol-bg.jpg);
+}
+
+
+/*--------------HUMAC--------------*/
+#humac {
+    background-image: url(../assets/img/hum-bg.jpg);
+}
+
+
+/*--------------POKONJIN DOL--------------*/
+#pok {
+    background-image: url(../assets/img/pok-bg.jpg);
+}
+
+/*--------------JELSA--------------*/
+#jels {
+    background-image: url(../assets/img/jels-bg.jpg);
+}
+
+/*--------------PLACES--------------*/
+#map {
+    background-image: url(../assets/img/map-bg.jpg);
+}
+
+.mapLink {
+    text-decoration: none;
+}
+
+.mapLink:hover {
+    color: #1a334b;
+    text-decoration: solid;
+}
+
+/*--------------VRBOVSKI--------------*/
+#vrb {
+    background-image: url(../assets/img/vrb-bg.jpg);
+}
+
+/*--------------REFERENCES--------------*/
+
+#ref-cont {
+    text-align: left;
+}
+
+/*-----------LISTS-------------*/
+.liVis {
+    list-style: numbers;
+    margin-left: 4%;
+}
+
+/*----------------H2-H3----------------*/
+h2 {
+    color: #93C47D;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+h3 {
+    color: #54853e;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*----------------IMAGES----------------*/
+.img {
+    margin: 5% 0 5% 2%;
+    width: 700px;
+    border: none;
+    box-shadow: 5px 5px 15px #344f68;
+}
+
+/*--------------------FOOTER-------------------*/
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 0.4fr 0.4fr 0fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . . ."
+        ". fotlogo contact ."
+        ". . . ."
+        "copiright copiright copiright copiright";
+    grid-area: footer;
+
+    background-color: #536a7f;
+    color: #e6e7e9;
+}
+
+.fotlogo {
+    grid-area: fotlogo;
+    margin: 7% 0;
+}
+
+.flogo {
+    width: 200px;
+    height: auto;
+
+}
+
+.contact {
+    grid-area: contact;
+    padding: 1%;
+
+}
+
+.copiright {
+    color: #7b8fa1;
+    height: 25px;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+    text-align: center;
+    background-color: #344f68;
+    grid-area: copiright;
+}
+
+/*--------------FORM---------------*/
+#fname,
+#fmail {
+    border-radius: 10px;
+    height: 23px;
+}
+
+#quest {
+    border-radius: 5px;
+}
+
+#fname,
+#fmail,
+#quest {
+    font-family: monospace;
+    margin-top: 1px;
+    margin-bottom: 7px;
+    color: #344f68;
+    background-color: #cfd6de;
+    width: 250px;
+    border: none;
+
+}
+
+#submit {
+    border: none;
+    box-shadow: 5px 5px 5px #344f68;
+    background-color: #cfd6de;
+    color: #344f68;
+    height: 25px;
+    width: 55px;
+    border-radius: 5px;
+}
+
+.links2{
+    display: none;
+}
+.logo2{
+    display: none;
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+
+@media screen and (max-width: 768px) {
+    .links2{
+        margin-top: 7%;
+        display: inline;
+        height: 60px;
+        margin-right: 200px;
+    }
+    .logo2{
+        display: block;
+    }
+    .logo{
+        display: none;
+    }
+    
+    nav {
+        grid-template-areas:
+            ". ."
+            "logo2 links2"
+            ". .";
+        grid-area: nav;
+    }
+
+
+    /* Adjust grid columns and rows for smaller screens */
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    /* Modify logo size and position in the navigation bar */
+    .nlogo {
+        margin-top: 5%;
+        height: 60px;
+        margin-left: 150px;
+        margin-right: 20px;
+    }
+
+    .img{
+        width: 100%;
+    }
+
+
+    /* Modify padding and font size for the site name */
+    .name-site {
+        padding: 10%;
+        font-size: 20px;
+    }
+
+    /* Modify padding for content */
+    .content {
+        padding: 5%;
+    }
+
+    .dropdown-second {
+        display: inline-block;
+      }
+      .dropdown-second:hover .downLink-second {
+        display: block;
+    }
+    .dropdown-second {
+        background-color: #25415bb7;
+        overflow: hidden;
+    }
+    
+    .dropdown-second .button {
+        font-size: 17px;
+        border: none;
+        outline: none;
+        color: #b4c3d1b9;
+        padding: 23px 10px;
+        font-family: inherit;
+        margin: 0;
+        background-color: transparent;
+    }
+    
+    .navbar a:hover,
+    .dropdown:hover .button {
+        color: white;
+    }
+    #dropdown-btn {
+        width: auto;
+      display: block;
+    }
+    #dropdown-menu {
+        text-decoration: none;
+        background-color: #b4c3d1b9;
+      display: none;
+      position: absolute;
+      width: 100%;
+      top: 40px;
+      left: 0;
+      right: 0;
+    }
+    #dropdown-menu a {
+        text-decoration: none;
+        color: #061524;
+    }
+    #dropdown-menu .dropdown:hover .downLink-second {
+      display: none;
+    }
+    #dropdown-menu .downLink-second {
+      position: static;
+      display: block;
+    }
+    #dropdown-menu .downLink-second a {
+        text-decoration: none;
+        color: #8fa8c1;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .contact {
+        margin: 20px 0;
+    }
+ 
+}
